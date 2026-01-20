@@ -608,83 +608,85 @@ const OrderTracking = () => {
       </motion.section>
 
       {/* ================= HERO (SHOP STYLE) ================= */}
-      <section className="relative w-full h-[450px] md:h-[550px] text-white overflow-hidden flex items-center justify-center">
-        {/* BACKGROUND IMAGE - Subtle Zoom */}
-        <motion.div
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.5 }}
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${bgImg})`,
-            backgroundColor: "#ff4d00",
-          }}
-        ></motion.div>
+<section className="relative w-full h-[450px] md:h-[550px] text-white overflow-hidden flex items-center justify-center">
+  {/* BACKGROUND IMAGE - Subtle Zoom */}
+  <motion.div
+    initial={{ scale: 1.1 }}
+    animate={{ scale: 1 }}
+    transition={{ duration: 1.5 }}
+    className="absolute inset-0 w-full h-full bg-cover bg-center"
+    style={{
+      backgroundImage: `url(${bgImg})`,
+      backgroundColor: "#ff4d00",
+    }}
+  ></motion.div>
 
-        {/* Decorative Left & Right Images */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Left Salad/Food Image */}
-          <motion.img
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            src={leftImg}
-            alt="left decoration"
-            className="absolute left-0 bottom-0 w-[250px] md:w-[450px] object-contain translate-y-10 -translate-x-10"
-          />
+  {/* Decorative Left & Right Images */}
+  <div className="absolute inset-0 pointer-events-none">
+    {/* Left Salad/Food Image */}
+    <motion.img
+      initial={{ x: -100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1, delay: 0.5 }}
+      src={leftImg}
+      alt="left decoration"
+      className="absolute left-0 bottom-0 w-[180px] md:w-[450px] object-contain translate-y-10 -translate-x-10"
+    />
 
-          {/* Right Chicken/Food Image */}
-          <motion.img
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            src={rightImg}
-            alt="right decoration"
-            className="absolute right-0 bottom-0 w-[250px] md:w-[450px] object-contain translate-y-10 translate-x-10"
-          />
-        </div>
+    {/* Right Chicken/Food Image */}
+    <motion.img
+      initial={{ x: 100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1, delay: 0.5 }}
+      src={rightImg}
+      alt="right decoration"
+      className="absolute right-0 bottom-0 w-[180px] md:w-[450px] object-contain translate-y-10 translate-x-10"
+    />
+  </div>
 
-        {/* HERO CONTENT - Centered vertically and horizontally */}
-        <div className="relative z-10 text-center px-4 w-full flex flex-col items-center">
-          <motion.h1
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-black mb-4 leading-none tracking-tight"
-          >
-            Track your Order
-          </motion.h1>
+  {/* HERO CONTENT - Centered vertically and horizontally */}
+  <div className="relative z-10 text-center px-4 w-full flex flex-col items-center">
+    <motion.h1
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      className="text-4xl md:text-7xl font-black mb-4 leading-none tracking-tight"
+    >
+      Track your Order
+    </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="text-lg md:text-xl font-bold mb-10"
-          >
-            Get real-time updates on your delivery status
-          </motion.p>
+    <motion.p
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.3 }}
+      className="text-base md:text-xl font-bold mb-8 md:mb-10 max-w-[300px] md:max-w-full mx-auto"
+    >
+      Get real-time updates on your delivery status
+    </motion.p>
 
-          {/* SEARCH BAR  */}
-          <motion.div
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="w-full max-w-[750px] relative"
-          >
-            <div className="bg-white rounded-full p-2 flex items-center shadow-xl">
-              <input
-                type="text"
-                placeholder="Enter your Order Number or Pl..."
-                className="flex-1 bg-transparent px-6 py-3 text-gray-900 font-bold outline-none placeholder:text-gray-400 placeholder:font-bold"
-              />
-              <button className="bg-[#FF5C00] hover:bg-black transition-colors text-white px-8 py-3 rounded-full flex items-center gap-2 font-black uppercase text-sm tracking-widest">
-                <Search size={20} />
-                Search
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+    {/* SEARCH BAR - Fully Responsive */}
+    <motion.div
+      initial={{ y: 10, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, delay: 0.4 }}
+      className="w-full max-w-[750px] px-2 relative"
+    >
+      <div className="bg-white rounded-full p-1.5 md:p-2 flex items-center shadow-2xl">
+        <input
+          type="text"
+          placeholder="Order Number..."
+          className="flex-1 bg-transparent px-4 md:px-6 py-2 md:py-3 text-gray-900 font-bold outline-none placeholder:text-gray-400 placeholder:font-bold text-sm md:text-base min-w-0"
+        />
+        
+        <button className="bg-[#FF5C00] hover:bg-black transition-all text-white p-3 md:px-8 md:py-3 rounded-full flex items-center justify-center gap-2 font-black uppercase text-xs md:text-sm tracking-widest shrink-0">
+          <Search size={20} className="shrink-0" />
+          {/* Hides the word 'Search' on mobile (smaller than 768px) */}
+          <span className="hidden md:block">Search</span>
+        </button>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
       {/* ================= ORDER TRACKING SECTION ================= */}
       <section className="bg-[#FDFDFD] py-10 md:py-20 relative overflow-hidden">
