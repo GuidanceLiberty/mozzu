@@ -95,12 +95,13 @@ const Team = () => {
       >
         <div className="flex items-center justify-between w-full h-[90px]">
           {/* LEFT SIDE: LOGO */}
-          <div className="px-10 h-full flex items-center border-r border-white/10">
-            <Link to="/">
+          <div className="px-4 md:px-10 h-full flex items-center border-r border-white/10">
+            <Link to="/" className="flex items-center">
               <img
                 src={logo}
                 alt="Mozzu Logo"
-                className="h-10 object-contain"
+                /* Increased height on mobile (h-12) and desktop (md:h-14) */
+                className="h-12 md:h-14 w-auto object-contain transition-all"
               />
             </Link>
           </div>
@@ -656,7 +657,7 @@ const Team = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-6xl md:text-8xl font-black mb-6 leading-none tracking-tight"
           >
-            Team Details
+            Team
           </motion.h1>
 
           {/* Breadcrumb Text Added Below */}
@@ -670,7 +671,7 @@ const Team = () => {
             <span className="text-xl">›</span>
             <span className="cursor-pointer">Pages</span>
             <span className="text-xl">›</span>
-            <span className="opacity-80">Team Details</span>
+            <span className="opacity-80">Team</span>
           </motion.div>
         </div>
       </section>
