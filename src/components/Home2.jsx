@@ -76,7 +76,6 @@ const Home2 = () => {
 
   return (
     <main className="w-full overflow-x-hidden">
-      
       {/* ================= TOP INFO BAR ================= */}
       <div className="fixed top-0 left-0 w-full z-60 bg-[#0c0c0c] border-b border-white/5 text-[13px] text-gray-400 hidden lg:block">
         <div className="w-full px-10 py-3 flex justify-between items-center">
@@ -125,12 +124,13 @@ const Home2 = () => {
       >
         <div className="flex items-center justify-between w-full h-[90px]">
           {/* LEFT SIDE: LOGO */}
-          <div className="px-10 h-full flex items-center border-r border-white/10">
-            <Link to="/">
+          <div className="px-3 md:px-10 h-full flex items-center border-r border-white/10">
+            <Link to="/" className="flex items-center">
               <img
                 src={logo}
                 alt="Mozzu Logo"
-                className="h-10 object-contain"
+                /* Mobile: 64px (h-16) | Desktop: 80px (md:h-20) */
+                className="h-16 md:h-20 w-auto object-contain transition-all duration-300 transform hover:scale-105"
               />
             </Link>
           </div>
@@ -902,7 +902,7 @@ const Home2 = () => {
                     (item) =>
                       (activeTab === "BREAKFAST" && item.btn1) ||
                       (activeTab === "LUNCH" && item.btn2) ||
-                      (activeTab === "DINNER" && item.btn3)
+                      (activeTab === "DINNER" && item.btn3),
                   )
                   .map((item, index) => (
                     <motion.div
@@ -1480,7 +1480,7 @@ const Home2 = () => {
                           >
                             <Icon size={14} />
                           </motion.div>
-                        )
+                        ),
                       )}
                     </div>
 
@@ -1672,7 +1672,7 @@ const Home2 = () => {
                         </div>
                       </motion.div>
                     </SwiperSlide>
-                  )
+                  ),
                 )}
                 <div className="custom-pagination mt-10 flex justify-center gap-2"></div>
               </Swiper>
@@ -1730,7 +1730,7 @@ const Home2 = () => {
                       />
                     </motion.div>
                   </SwiperSlide>
-                )
+                ),
               )}
             </Swiper>
           </motion.div>

@@ -81,8 +81,8 @@ const Cart = () => {
       prev.map((item) =>
         item.id === id
           ? { ...item, quantity: Math.max(1, item.quantity + delta) }
-          : item
-      )
+          : item,
+      ),
     );
   };
 
@@ -92,7 +92,7 @@ const Cart = () => {
 
   const subtotal = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
-    0
+    0,
   );
   const discount = 20.0;
   const delivery = 2.0;
@@ -109,12 +109,13 @@ const Cart = () => {
       >
         <div className="flex items-center justify-between w-full h-[90px]">
           {/* LEFT SIDE: LOGO */}
-          <div className="px-10 h-full flex items-center border-r border-white/10">
-            <Link to="/">
+          <div className="px-3 md:px-10 h-full flex items-center border-r border-white/10">
+            <Link to="/" className="flex items-center">
               <img
                 src={logo}
                 alt="Mozzu Logo"
-                className="h-10 object-contain"
+                /* Mobile: 64px (h-16) | Desktop: 80px (md:h-20) */
+                className="h-16 md:h-20 w-auto object-contain transition-all duration-300 transform hover:scale-105"
               />
             </Link>
           </div>
