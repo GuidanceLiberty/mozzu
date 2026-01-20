@@ -95,13 +95,13 @@ const Team = () => {
       >
         <div className="flex items-center justify-between w-full h-[90px]">
           {/* LEFT SIDE: LOGO */}
-          <div className="px-4 md:px-10 h-full flex items-center border-r border-white/10">
+          <div className="px-3 md:px-10 h-full flex items-center border-r border-white/10">
             <Link to="/" className="flex items-center">
               <img
                 src={logo}
                 alt="Mozzu Logo"
-                /* Increased height on mobile (h-12) and desktop (md:h-14) */
-                className="h-12 md:h-14 w-auto object-contain transition-all"
+                /* Mobile: 64px (h-16) | Desktop: 80px (md:h-20) */
+                className="h-16 md:h-20 w-auto object-contain transition-all duration-300 transform hover:scale-105"
               />
             </Link>
           </div>
